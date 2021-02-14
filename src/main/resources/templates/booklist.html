@@ -1,0 +1,40 @@
+<html>
+<head>
+	<title>Bookstore: List page</title>
+</head>
+<body>
+	<h1>Books</h1>
+	
+	<table>
+		<thead>
+			<tr>
+				<th>Author</th>
+				<th>Title</th>
+				<th>ISBN</th>
+				<th>Year</th>
+				<th>Category</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="book: ${books}">
+				<td th:text="${book.author}" />
+				<td th:text="${book.title}" />
+				<td th:text="${book.isbn}" />
+				<td th:text="${book.year}" />
+				<td th:text="${book.category}" />
+				<td>
+					<a th:href="@{delete/{id}(id=${book.id})}">
+						Delete
+					</a>
+					<a th:href="@{edit/{id}(id=${book.id})}">
+						Edit
+					</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<a href="addbook">Add Book</a>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<html>
+<head>
+	<title>Bookstore: Add book</title>
+</head>
+<body>
+	<h1>Edit book</h1>
+	<form 
+		action="#"
+		th:action="@{../save}"
+		th:object="${book}"
+		method="POST"
+	>
+		<label for="id"></label>
+		<input 
+			type="hidden"
+			id="id"
+			th:field="*{id}"
+			readonly="readonly"
+		/>
+		<label for="title">
+			Title
+		</label>
+		<input
+			id="title"
+			type="text"
+			th:field="*{title}"
+		/><br />
+		
+		<label for="author">
+			Author
+		</label>
+		<input 
+			id="author"
+			type="text"
+			th:field="*{author}"
+		/><br />
+		
+		<label for="isbn">
+			ISBN
+		</label>
+		<input 
+			id="isbn"
+			type="text"
+			th:field="*{isbn}"
+		/><br />
+		
+		<label for="year">
+			Year
+		</label>
+		<input 
+			id="year"
+			type="number"
+			th:field="*{year}"
+		/><br />
+		
+		<label for="categorylist">Category</label>
+		<select 
+			id="categorylist" 
+		 	th:field="*{category}" 
+			class="form-control"
+		>
+ 			<option 
+ 				th:each="category: ${categories}" 
+ 				th:value="${category.categoryid}"
+ 				th:text="${category.name}"
+ 			></option>
+		</select>
+		
+		<button type="submit">
+			Submit
+		</button>
+	</form>
+</body>
+</html>
