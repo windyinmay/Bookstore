@@ -1,11 +1,12 @@
 <html>
 <head>
 	<title>Bookstore: List page</title>
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" />
 </head>
 <body>
 	<h1>Books</h1>
 	
-	<table>
+	<table class="table table-striped">
 		<thead>
 			<tr>
 				<th>Author</th>
@@ -24,10 +25,10 @@
 				<td th:text="${book.year}" />
 				<td th:text="${book.category}" />
 				<td>
-					<a th:href="@{delete/{id}(id=${book.id})}">
+					<a class="btn btn-danger" th:href="@{delete/{id}(id=${book.id})}">
 						Delete
 					</a>
-					<a th:href="@{edit/{id}(id=${book.id})}">
+					<a class="btn btn-danger" th:href="@{edit/{id}(id=${book.id})}">
 						Edit
 					</a>
 				</td>
@@ -35,6 +36,6 @@
 		</tbody>
 	</table>
 	
-	<a href="addbook">Add Book</a>
+	<a href="addbook" class="btn btn-success">Add Book</a>
 </body>
 </html>

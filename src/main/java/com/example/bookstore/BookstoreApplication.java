@@ -21,19 +21,19 @@ public class BookstoreApplication {
 	public CommandLineRunner initBooks(BookRepository repository) {
 		return (args) -> {
 			repository.save(new Book(
-				"Ao Hoa",
-				"Pham Duy",
-				2002,
-				"AOHOA",
-				4.5
+				"Ernest Hemingway",
+				"A Farewell to Arms",
+				1929,
+				"1232323-21",
+				11.5
 			));
 			
 			repository.save(new Book(
-				"Hom nay em mac ao huong",
-				"Quang Le",
-				2005,
-				"THIEN DUONG",
-				5.3
+				"George Orwell",
+				"Animal Farm",
+				1945,
+				"2212343-5",
+				10.3
 			));
 		};
 	}
