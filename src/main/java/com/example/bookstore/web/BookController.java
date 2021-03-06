@@ -25,6 +25,11 @@ public class BookController {
 	@Autowired
 	private CategoryRepository crepository;
 	
+	@GetMapping("/login")
+	public String loginPage() {
+		return "login";
+	}
+	
 	@GetMapping("index")
 	public String index() {
 		return "index";
@@ -84,4 +89,8 @@ public class BookController {
 		return "editbook";
 	}
 	
+	@RequestMapping(value="/logout", method = RequestMethod.POST)
+	public String logoutPage() {
+	return "login";
+	}
 }
