@@ -7,8 +7,10 @@ import org.springframework.context.annotation.Bean;
 
 import com.example.bookstore.domain.Book;
 import com.example.bookstore.domain.Category;
+import com.example.bookstore.domain.User;
 import com.example.bookstore.repository.BookRepository;
 import com.example.bookstore.repository.CategoryRepository;
+import com.example.bookstore.repository.UserCrudRepository;
 
 @SpringBootApplication
 public class BookstoreApplication {
@@ -37,6 +39,22 @@ public class BookstoreApplication {
 			));
 		};
 	}
+		
+	@Bean
+	public CommandLineRunner initUsers(UserCrudRepository urepository) {
+		// Create users: admin/admin user/user
+	return (args) -> {
+		User user1 = new User("user1"
+		,
+		"abcd@1234", "USER","user@example.com");
+		User user2 = new User("admin1"
+		,
+		"$2a$10$0MMwY", "ADMIN", "admin@example.com");
+		urepository.save(user1);
+		urepository.save(user2);
+	};
+}
+	
 	
 	@Bean
 	public CommandLineRunner initCategories(CategoryRepository repository) {
