@@ -46,10 +46,10 @@ public class BookstoreApplication {
 	return (args) -> {
 		User user1 = new User("user1"
 		,
-		"abcd@1234", "USER","user@example.com");
+		"\"$2a$06$3jYRJrg0ghaaypjZ/.g4SethoeA51ph3UD4kZi9oPkeMTpjKU5uo6", "USER","user@example.com");
 		User user2 = new User("admin1"
 		,
-		"$2a$10$0MMwY", "ADMIN", "admin@example.com");
+		"$2a$10$0MMwY.IQqpsVc1jC8u7IJ.2rT8b0Cd3b3sfIBGV2zfgnPGtT4r0.C", "ADMIN", "admin@example.com");
 		urepository.save(user1);
 		urepository.save(user2);
 	};
